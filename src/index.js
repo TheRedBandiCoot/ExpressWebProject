@@ -21,7 +21,7 @@ app.use(express.static(STATIC_PATH))
 app.get("/", (req, res) => {
     res.render("index",
         {
-            name: "About"
+            name: "about"
         }
     )
 })
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about",
         {
-            name: "About Us"
+            name: "about Us"
         }
     );
 })
