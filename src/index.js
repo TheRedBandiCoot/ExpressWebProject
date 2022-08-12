@@ -3,6 +3,38 @@ const app = express();
 const path = require("path")
 const hbs = require("hbs");
 const port = process.env.PORT || 8000;
+// const addData = require("../public/login")
+// addData()
+
+// Mongoose
+// const mongoose = require("mongoose");
+
+// Mongoose connect mongodb to nodeJS 
+// mongoose.connect("mongodb://localhost:27017/dynamicdb").then(() => console.log("connected")).catch((err) => console.error(err))
+
+/*
+    *** schema                      
+    *** A Mongoose schema defines the structure of the document
+    *** Default values, validations, etc.   
+*/
+
+// const dynamicDataSchema = new mongoose.Schema({
+//     userID: String,
+//     userEmail: String
+// })
+// models
+// A Mongoose Model is wrapper on the mongoose Schema
+// Mongoose Model provide an interface to the database for creat, querying, updating, deleting records etc.
+// const DynamicData = new mongoose.model("DynamicData", dynamicDataSchema)
+
+// create document or insert
+
+// const dynamicDataList = new DynamicData({
+//     userID: "nirov",
+//     userEmail: "dasda"
+// })
+
+// dynamicDataList.save();
 
 const STATIC_PATH = path.join(__dirname, "../public")
 const TEMPLATE_PATH = path.join(__dirname, "../templates/views")
@@ -21,7 +53,8 @@ app.use(express.static(STATIC_PATH))
 app.get("/", (req, res) => {
     res.render("index",
         {
-            name: "about"
+            name: "about",
+            login: "login"
         }
     )
 })
@@ -30,6 +63,14 @@ app.get("/about", (req, res) => {
     res.render("about",
         {
             name: "about Us"
+        }
+    );
+})
+
+app.get("/login", (req, res) => {
+    res.render("login",
+        {
+            login: "login Page"
         }
     );
 })

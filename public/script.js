@@ -106,3 +106,4 @@ window.addEventListener("resize", (e) => {
         GLOBAL_COMPANY_LIST.classList.replace("menu-company-list", "company-list")
     }
 })
+
